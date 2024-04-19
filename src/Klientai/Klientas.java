@@ -2,14 +2,16 @@ package Klientai;
 
 import AutoParkas.Automobilis;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Klientas {
     private String vardas;
     private String pavarde;
     private int id = 0;
+    private int nuomosLaikas;
     private static int idSkaiciuokle;
     private ArrayList<Automobilis> isnuomuotiAutomobiliai = new ArrayList<>();
+    private ArrayList<Automobilis> paskutinisNuomuotas = new ArrayList<>();
 
     public Klientas(String vardas, String pavarde) {
         this.vardas = vardas;
@@ -18,6 +20,11 @@ public class Klientas {
         KlientuSarasas.klientuSarasas.add(this);
     }
 
+    public void setPaskutinisNuomuotasAutomobilis(Automobilis auto){
+        paskutinisNuomuotas.clear();
+        paskutinisNuomuotas.add(auto);
+        nuomosLaikas = new Random().nextInt(1,10);
+    }
     public int getId() {
         return id;
     }
@@ -28,11 +35,11 @@ public class Klientas {
 
     @Override
     public String toString() {
-        return "Klientas{" +
-                "vardas='" + vardas + '\'' +
-                ", pavarde='" + pavarde + '\'' +
-                ", id=" + id +
-                ", isnuomuotiAutomobiliai=" + isnuomuotiAutomobiliai +
-                '}';
+        return "Klientas: "+ id
+                + " " +vardas
+                + " " +pavarde
+                + " Isnuomuoti auto: " +isnuomuotiAutomobiliai
+                + " | Paskutinis isnuomuotas: " +paskutinisNuomuotas
+                + "Laikas: "+nuomosLaikas;
     }
 }

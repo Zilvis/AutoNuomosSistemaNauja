@@ -25,6 +25,7 @@ public class AutoParkas {
      * Pradzioj tikrinu klienta pagal id
      * Tada einu per jo isnuomuotus auto ir tikrinu juos pagal masinos id
      * Radus masina pagal id ikeliu objekta i auto parka
+     * Pridedame masina i paskutiu naudotu sarasa
      * Galiausiai istrinu is kliento isnuomuotu automobiliu!
      * @param klientoId
      * @param masinosId
@@ -34,8 +35,12 @@ public class AutoParkas {
             if (KlientuSarasas.klientuSarasas.get(i).getId() == klientoId){
                 for (int b = 0; b < KlientuSarasas.klientuSarasas.get(i).getIsnuomuotiAutomobiliai().size(); b++){
                     if (KlientuSarasas.klientuSarasas.get(i).getIsnuomuotiAutomobiliai().get(b).getId() == masinosId){
+                        KlientuSarasas.klientuSarasas.get(klientoId).setPaskutinisNuomuotasAutomobilis(
+                                KlientuSarasas.klientuSarasas.get(i).getIsnuomuotiAutomobiliai().get(b));
                         autoParkas.add(KlientuSarasas.klientuSarasas.get(i).getIsnuomuotiAutomobiliai().get(b));
                         KlientuSarasas.klientuSarasas.get(klientoId).getIsnuomuotiAutomobiliai().remove(b);
+
+
                     }
                 }
             }
