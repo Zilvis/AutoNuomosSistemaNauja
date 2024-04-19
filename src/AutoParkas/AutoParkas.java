@@ -47,6 +47,14 @@ public class AutoParkas {
         }
     }
 
+    public void atsuktiRida (int masinosId, int naujaRida){
+        for (int i = 0; i < autoParkas.size(); i++){
+            if (autoParkas.get(i).getId() == masinosId){
+                autoParkas.get(i).setRida(naujaRida);
+            }
+        }
+    }
+
     public void istrintiAuto(int id) {
 
         for (int i = 0; i < autoParkas.size(); i++){

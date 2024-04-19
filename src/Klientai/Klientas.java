@@ -35,11 +35,8 @@ public class Klientas {
 
     @Override
     public String toString() {
-        return "Klientas: "+ id
-                + " " +vardas
-                + " " +pavarde
-                + " Isnuomuoti auto: " +isnuomuotiAutomobiliai
-                + " | Paskutinis isnuomuotas: " +paskutinisNuomuotas
-                + "Laikas: "+nuomosLaikas;
+        return "ID: " +id+ " | "+vardas+" | " +pavarde+ " | " +isnuomuotiAutomobiliai+
+                " | Paskutinis isnuomuotas " +paskutinisNuomuotas+ " Laikas: "+nuomosLaikas;
+
     }
 }
